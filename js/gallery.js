@@ -97,10 +97,10 @@ for(var i = 0; i < mImages.length; i++) {
 function GalleryImage(img, plc, des, dat) {
 	//implement me as an object to hold the following data about an image:
 	
-	this.img = image;			//1. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
-	this.plc = place;			//2. location where photo was taken
-	this.des = description;		//3. description of photo
-	this.dat = date; 			//4. the date when the photo was taken
+	this.image = img;			//1. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
+	this.place = plc;			//2. location where photo was taken
+	this.description = des;		//3. description of photo
+	this.date = dat; 			//4. the date when the photo was taken
 }
 
 
@@ -109,22 +109,24 @@ mRequest.onreadystatechange = function() {
 	
 	if (mRequest.readyState == 4 && mRequest.status == 200) {
 		try {
-			// Let’s try and see if we can parse JSON (see next slide)
-	
+			
 			mJson = JSON.parse(mRequest.responseText);
+			
 			// LOOP THROUGH the mJSON array here and fill up the
 			// mImages array with GalleryImage objects
-			// Let’s print out the JSON; It will likely show as “obj”
-			
-			for( var i = 0; i < mJson.images.length; i++) {
-				mImages.push(new GalleryImage((mJson.images[i].image, mJson.images[i].place, mJson.images[i].description, mJson.images[i].date)));
-			} 
-			console.log(mJson);
-		} catch(err) {
-				console.log(err.message);
+			for(var i = 0; mJson.images.length; i++) { 	
+				mImages.push(new GalleryImage((mJson.images[i].image, mJson.images[i].place, mJson.images[i].description, mJson.images[i].date))); 	
 			}
+
+			// Let’s print out the JSON; It will likely show as “obj”
+			console.log(mJson);
+		} 
+		catch(err) 
+		{
+			console.log(err.message);
 		}
+	}
 };
 
-mRequest.open("GET",mUrl, true);
+mRequest.open("GET",mURL, true);
 mRequest.send();
