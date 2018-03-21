@@ -121,10 +121,10 @@ mRequest.onreadystatechange = function() {
 			// Let’s print out the JSON; It will likely show as “obj”
 			console.log(mJson);
 		} 
-		catch(err) 
+		/*catch(err) 
 		{
 			console.log(err.message);
-		}
+		} */
 	}
 };
 
