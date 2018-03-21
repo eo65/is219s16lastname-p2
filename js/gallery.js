@@ -84,10 +84,10 @@ window.addEventListener('load', function() {
 }, false);
 
 
-mImages.push(new GalleryImage("../img/places/australia.jpg", "Australia", "Loch Ard Gorge", "01/01/2016" ));
-mImages.push(new GalleryImage("../img/places/austria.jpg", "Austria", "Austrian chapel", "01/02/2016"));
-mImages.push(new GalleryImage("../img/places/france.jpg", "Paris", "Eiffel Tower", "01/03/2016"));
-mImages.push(new GalleryImage("../img/places/greece.jpg", "Greece", "Greek coastline", "01/04/2016"));
+mImages.push(new GalleryImage("img/places/australia.jpg", "Australia", "Loch Ard Gorge", "01/01/2016" ));
+mImages.push(new GalleryImage("img/places/austria.jpg", "Austria", "Austrian chapel", "01/02/2016"));
+mImages.push(new GalleryImage("img/places/france.jpg", "Paris", "Eiffel Tower", "01/03/2016"));
+mImages.push(new GalleryImage("img/places/greece.jpg", "Greece", "Greek coastline", "01/04/2016"));
 
 
 function GalleryImage(plc, des, dat, img) {
@@ -100,7 +100,7 @@ function GalleryImage(plc, des, dat, img) {
 }
 
 
-mUrl = "../images.json";
+mUrl = "images.json";
 var mRequest = new XMLHttpRequest();
 mRequest.onreadystatechange = function() {
 	
