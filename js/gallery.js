@@ -89,6 +89,10 @@ mImages.push(new GalleryImage("img/places/austria.jpg", "Austria", "Austrian cha
 mImages.push(new GalleryImage("img/places/france.jpg", "Paris", "Eiffel Tower", "01/03/2016"));
 mImages.push(new GalleryImage("img/places/greece.jpg", "Greece", "Greek coastline", "01/04/2016"));
 
+for(var i = 0; i < mImages.length; i++) {
+	console.log(mImages[i]);
+}
+
 
 function GalleryImage(plc, des, dat, img) {
 	//implement me as an object to hold the following data about an image:
@@ -101,7 +105,6 @@ function GalleryImage(plc, des, dat, img) {
 
 
 mUrl = "images.json";
-var mRequest = new XMLHttpRequest();
 mRequest.onreadystatechange = function() {
 	
 	if (mRequest.readyState == 4 && mRequest.status == 200) {
@@ -113,7 +116,7 @@ mRequest.onreadystatechange = function() {
 			// mImages array with GalleryImage objects
 			// Let’s print out the JSON; It will likely show as “obj”
 			
-			for( var i = 0; mJson.images.length; i++) {
+			for( var i = 0; i < mJson.images.length; i++) {
 				mImages.push(new GalleryImage((mJson.images[i].image, mJson.images[i].place, mJson.images[i].description, mJson.images[i].date)));
 				console.log(mJson);
 			} catch(err) {
