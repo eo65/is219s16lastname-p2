@@ -94,7 +94,7 @@ for(var i = 0; i < mImages.length; i++) {
 }
 
 
-function GalleryImage(plc, des, dat, img) {
+function GalleryImage(img, plc, des, dat) {
 	//implement me as an object to hold the following data about an image:
 	
 	this.img = image;			//1. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
