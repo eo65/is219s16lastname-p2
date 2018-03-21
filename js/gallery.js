@@ -118,13 +118,12 @@ mRequest.onreadystatechange = function() {
 			
 			for( var i = 0; i < mJson.images.length; i++) {
 				mImages.push(new GalleryImage((mJson.images[i].image, mJson.images[i].place, mJson.images[i].description, mJson.images[i].date)));
-				console.log(mJson);
-			} catch(err) {
-				console.log(err.message)
+			} 
+			console.log(mJson);
+		} catch(err) {
+				console.log(err.message);
 			}
 		}
-	}
-	else alert("ERROR ACCESS JSON FILE!!!!!")
 };
 
 mRequest.open("GET",mUrl, true);
