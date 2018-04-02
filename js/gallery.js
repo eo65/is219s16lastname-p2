@@ -118,7 +118,7 @@ for (var i = 0; i < mImages.length; i++) {
 }
 
 
-var mURL = "extra.json";
+var mURL = "Extra.json";
 var mRequest = new XMLHttpRequest();
 mRequest.onreadystatechange = function() {
 // Do something interesting if file is opened successfully
