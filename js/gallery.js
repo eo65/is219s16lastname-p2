@@ -41,12 +41,10 @@ function swapPhoto() {
 	$('.location').html('<p>Location: ' + mImages[mCurrentIndex].location + '</p)');
 	$('.description').html('<p>Description: ' + mImages[mCurrentIndex].description + '</p)');
 	$('.date').html('<p>Date: ' + mImages[mCurrentIndex].date + '</p)');
-			
+	
 			$('.moreIndicator').click(function(){ 
 				$('.details').slideDown().toggle();
 			});
-			
-			$('.details').hide();	
 				
 			$('#nextPhoto').click(function(){ 
 				if(mCurrentIndex != mImages.length - 1) {
@@ -72,6 +70,10 @@ function swapPhoto() {
 		
 	console.log('swap photo');
 	console.log(mImages[mCurrentIndex].description);
+	
+	$('.moreIndicator').click(function(){	
+				$('.details').hide().toggle();	
+			});
 	
 };
 
