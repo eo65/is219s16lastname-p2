@@ -55,6 +55,7 @@ function swapPhoto() {
 					mCurrentIndex = 1;
 					$('#photo').attr("src", mImages[mCurrentIndex].image);
 				}
+				$('.details').hide();
 			});			
 			
 			$('#prevPhoto').click(function(){ 
@@ -66,15 +67,11 @@ function swapPhoto() {
 					mCurrentIndex = mImages.length - 1;
 					$('#photo').attr("src", mImages[mCurrentIndex].image);
 				}
+				$('.details').hide();
 			});
 		
 	console.log('swap photo');
 	console.log(mImages[mCurrentIndex].description);
-	
-	$('.moreIndicator').click(function(){	
-				$('.details').hide().toggle();	
-			});
-	
 };
 
 // Counter for the mImages array
