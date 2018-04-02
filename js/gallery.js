@@ -38,27 +38,42 @@ function swapPhoto() {
 	//from the JSON string
 	
 	$('#photo').attr("src", mImages[mCurrentIndex].image);
+	$('.location').html('<p>Location: ' + mImages[mCurrentIndex].location + '</p)');
+	$('.description').html('<p>Description: ' + mImages[mCurrentIndex].description + '</p)');
+	$('.date').html('<p>Date: ' + mImages[mCurrentIndex].date + '</p)');
+			
+			$('.moreIndicator').click(function(){ 
+				$('.details').slideDown().toggle();
+			});
+			
+			$('.details').hide();	
+				
+			$('#nextPhoto').click(function(){ 
+				if(mCurrentIndex != mImages.length - 1) {
+					mCurrentIndex++;
+					$('#photo').attr("src", mImages[mCurrentIndex].image);
+				}
+				else {
+					mCurrentIndex = 1;
+					$('#photo').attr("src", mImages[mCurrentIndex].image);
+				}
+			});			
+			
+			$('#prevPhoto').click(function(){ 
+				if(mCurrentIndex != 0) {
+					mCurrentIndex--;
+					$('#photo').attr("src", mImages[mCurrentIndex].image);
+				}
+				else {
+					mCurrentIndex = mImages.length - 1;
+					$('#photo').attr("src", mImages[mCurrentIndex].image);
+				}
+			});
+		
+	console.log('swap photo');
+	console.log(mImages[mCurrentIndex].description);
 	
-		if(mCurrentIndex < mImages.length) {
-		
-		mCurrentIndex++;
-		} else { 
-			mCurrentIndex = 0; // resets it back to zero
-		
-		};
-		
-	console.log('swap #photo');
 };
-
-function reversSwap() {
-	if(mCurrentIndex == 0) {			
-		mCurrentIndex = mImages.length-1;
-		mCurrentIndex++;
-	} else { 
-		mCurrentIndex = --
-		$('#photo').attr("src", mImages[mCurrentIndex].image);		
-	}	
-}
 
 // Counter for the mImages array
 var mCurrentIndex = 0;
@@ -108,10 +123,11 @@ function GalleryImage(img, loc, des, dte) {
 
 var mImages = [];
 
-mImages.push(new GalleryImage("img/places/greece.jpg", "Greace", "The Beautiful Islands of Greeece", "01/01/2016" ));
+mImages.push(new GalleryImage("img/places/australia.jpg", "Australia", "Loch Ard Gorge", "01/01/2016" ));
 mImages.push(new GalleryImage("img/places/switzerland.jpg", "Switzerland", "The Beautiful Mountains of Switzerland", "01/01/2016"));
 mImages.push(new GalleryImage("img/places/italy.jpg", "Italy", "The Beautiful Landscape of italy", "01/01/2016"));
 mImages.push(new GalleryImage("img/places/france.jpg", "France", "The Beautiful Landscape of France", "01/01/2016"));
+mImages.push(new GalleryImage("img/places/hungary.jpg", "Hungary", "Budapest skyline", "01/05/2016"));
 
 for (var i = 0; i < mImages.length; i++) {
 	console.log(mImages[i]); 
